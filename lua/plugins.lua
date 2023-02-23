@@ -8,7 +8,7 @@ function M.setup()
 
     use {
       "nvim-lualine/lualine.nvim",
-      requires = {"nvim-web-devicons"},
+      requires = {"nvim-tree/nvim-web-devicons"},
       config = function()
 	require("configs.lualine").setup()
       end,
@@ -28,6 +28,34 @@ function M.setup()
       run = ":TSUpdate",
       config = function()
 	require("configs.treesitter").setup()
+      end,
+    }
+
+    use {
+      "hrsh7th/nvim-cmp",
+      event = "InsertEnter",
+      opt = true,
+      config = function()
+        require("configs.cmp").setup()
+      end,
+      requires = {
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-nvim-lua",
+        "ray-x/cmp-treesitter",
+        "hrsh7th/cmp-cmdline",
+        "hrsh7th/cmp-calc",
+        "hrsh7th/cmp-emoji",
+        "f3fora/cmp-spell",
+        disable = false
+      }
+    }
+
+    use {
+      "akinsho/nvim-bufferline.lua",
+      wants = "nvim-tree/nvim-web-devicons",
+      config = function()
+	require("configs.bufferline").setup()
       end,
     }
 
