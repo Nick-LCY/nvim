@@ -23,6 +23,9 @@ api.nvim_set_keymap("n", "<Leader>e", ":bn<CR>", conf)
 api.nvim_set_keymap("n", "<Leader>q", ":bN<CR>", conf)
 api.nvim_set_keymap("n", "<Leader>d", ":bd<CR>", conf)
 
+api.nvim_set_keymap("n", "<Leader>fo", ":GitDiff<CR>", conf)
+api.nvim_set_keymap("n", "<Leader>fq", ":GitDiffClose<CR>", conf)
+
 api.nvim_set_keymap("n", "<Leader>t", ":10sp term://bash<CR>a", conf)
 api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", conf)
 
@@ -38,4 +41,7 @@ opt.ignorecase = true
 opt.breakindent = true
 opt.splitbelow = true
 opt.splitright = true
+opt.signcolumn = "yes"
+opt.mouse = ""
+opt.timeout = false
 
